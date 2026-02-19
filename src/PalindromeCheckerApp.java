@@ -36,6 +36,34 @@ public class PalindromeCheckerApp {
             System.out.println(original + " is NOT a Palindrome");
         }
 
+
+
+
+        // UC4: Character Array Two Pointer
+        System.out.println("\nUC4: Character Array Check");
+
+        String word2 = "radar";
+        char[] arr = word2.toCharArray();
+
+        boolean isPalindrome = true;
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            if (arr[start] != arr[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        if (isPalindrome) {
+            System.out.println(word2 + " is a Palindrome");
+        } else {
+            System.out.println(word2 + " is NOT a Palindrome");
+        }
+
     }   // ← main ends here
 
 }   // ← class ends here

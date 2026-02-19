@@ -1,12 +1,19 @@
+import java.util.Stack;
+
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
+        // ======================
+        // UC1: Welcome Message
+        // ======================
         System.out.println("📘 PALINDROME CHECKER APP");
         System.out.println("Version 1.0");
+        System.out.println("UC1: Application Entry & Welcome Message");
+
 
         // ======================
-        // UC2
+        // UC2: Hardcoded Palindrome Check
         // ======================
         System.out.println("\nUC2: Hardcoded Palindrome Check");
 
@@ -18,8 +25,9 @@ public class PalindromeCheckerApp {
             System.out.println(word + " is NOT a Palindrome");
         }
 
+
         // ======================
-        // UC3
+        // UC3: String Reverse Using Loop
         // ======================
         System.out.println("\nUC3: Palindrome using String Reverse");
 
@@ -37,10 +45,10 @@ public class PalindromeCheckerApp {
         }
 
 
-
-
-        // UC4: Character Array Two Pointer
-        System.out.println("\nUC4: Character Array Check");
+        // ======================
+        // UC4: Character Array Based Check
+        // ======================
+        System.out.println("\nUC4: Character Array Based Palindrome Check");
 
         String word2 = "radar";
         char[] arr = word2.toCharArray();
@@ -64,6 +72,33 @@ public class PalindromeCheckerApp {
             System.out.println(word2 + " is NOT a Palindrome");
         }
 
-    }   // ← main ends here
 
-}   // ← class ends here
+        // ======================
+        // UC5: Stack Based Check
+        // ======================
+        System.out.println("\nUC5: Stack Based Palindrome Check");
+
+        String word3 = "madam";
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : word3.toCharArray()) {
+            stack.push(c);
+        }
+
+        boolean result = true;
+
+        for (char c : word3.toCharArray()) {
+            if (c != stack.pop()) {
+                result = false;
+                break;
+            }
+        }
+
+        if (result) {
+            System.out.println(word3 + " is a Palindrome");
+        } else {
+            System.out.println(word3 + " is NOT a Palindrome");
+        }
+
+    }
+}
